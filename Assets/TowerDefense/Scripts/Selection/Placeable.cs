@@ -2,15 +2,32 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Placeable : MonoBehaviour {
+public class Placeable : MonoBehaviour
+{
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    public bool isAvailable = true;
+    public Transform pivotPoint;
+
+    /// <summary>
+    /// Returns the pivot point attached to tile
+    /// </summary>
+    /// <returns></returns>
+    public Vector3 GetPivotPoint()
+    {
+        if (pivotPoint == null)
+            return transform.position;
+
+        return pivotPoint.position;
+    }
+    // Use this for initialization
+    void Start()
+    {
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
 }
